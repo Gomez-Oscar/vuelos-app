@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Barlow&family=Barlow+Condensed&family=Bellefair&family=Courgette&family=Epilogue:wght@500;700&family=Josefin+Sans:wght@300&family=Quicksand&family=Sarabun:wght@400;600;700&family=Space+Grotesk&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 'border-box';
+}
+.header__container {
+  position: relative;
+  width: 1440px;
+  height: 64px;
+  color: #fefefe;
+}
+.avion__icon {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 14px;
+  left: 132px;
+}
+.text__header {
+  position: absolute;
+  width: 67px;
+  height: 30px;
+  top: 19px;
+  left: 179px;
+  font-family: Sarabun;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6c6cfe;
+}
+.usd {
+  position: absolute;
+  width: 23px;
+  height: 20px;
+  top: 21px;
+  left: 1161px;
+  font-family: Sarabun;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #171a1f;
+}
+.buscador__icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 21px;
+  left: 1200px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.campana__icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 21px;
+  left: 1236px;
+  padding: 2.5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.avatar__icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 13px;
+  left: 1272px;
+  border-radius: 18px;
+  color: #cdcdfe;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
