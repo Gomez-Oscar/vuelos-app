@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Barlow&family=Barlow+Condensed&family=Bellefair&family=Courgette&family=Epilogue:wght@500;700&family=Josefin+Sans:wght@300&family=Quicksand&family=Sarabun:wght@400;600;700&family=Space+Grotesk&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 'border-box';
+}
+
+.footer__container {
+  margin: auto;
+  position: relative;
+  border: solid black 1px;
+  width: 1440px;
+  height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .avion_icon {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 74px;
+    left: 245px;
+  }
+
+  .text_E_flight {
+    position: absolute;
+    width: 67px;
+    height: 30px;
+    top: 79px;
+    left: 292px;
+    font-family: Sarabun;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    color: #6c6cfe;
+  }
+
+  .email_input_container {
+    position: absolute;
+    top: 134px;
+    left: 246px;
+
+    .email_icon {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 10px;
+      left: 12px;
+      padding: 3px, 1.5px, 3px, 1.5px;
+      z-index: 1;
+    }
+
+    .email_input {
+      position: absolute;
+      text-align: center;
+      width: 223px;
+      height: 35px;
+      border-radius: 18px;
+      border: 1px solid #8f949f;
+      outline: none;
+    }
+  }
+
+  .button_suscribe {
+    position: absolute;
+    width: 87px;
+    height: 36px;
+    top: 134px;
+    left: 479px;
+    padding: 7px, 13.5px, 7px, 14.5px;
+    border-radius: 18px;
+    background-color: #11d295;
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #fefefe;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .related_links {
+    font-family: Sarabun;
+    text-align: left;
+    color: #171a1f;
+
+    .about_us {
+      position: absolute;
+      width: 80px;
+      height: 30px;
+      top: 74px;
+      left: 716px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+
+    .how_to_book {
+      position: absolute;
+      width: 77px;
+      height: 22px;
+      top: 116px;
+      left: 716px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    .help_center {
+      position: absolute;
+      width: 71px;
+      height: 22px;
+      top: 150px;
+      left: 716px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    .flight {
+      position: absolute;
+      width: 54px;
+      height: 30px;
+      top: 74px;
+      left: 901px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+
+    .booking_easily {
+      position: absolute;
+      width: 87px;
+      height: 22px;
+      top: 116px;
+      left: 901px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    .promotions {
+      position: absolute;
+      width: 71px;
+      height: 22px;
+      top: 150px;
+      left: 901px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    .contact_us {
+      position: absolute;
+      width: 120px;
+      height: 30px;
+      top: 74px;
+      left: 1078px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+
+    .facebook_icon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 118px;
+      left: 1078px;
+    }
+    .twiter_icon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 118px;
+      left: 1114px;
+    }
+    .instagram_icon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 118px;
+      left: 1150px;
+    }
+
+    a:hover,
+    img:hover {
+      cursor: pointer;
+    }
+  }
+}
