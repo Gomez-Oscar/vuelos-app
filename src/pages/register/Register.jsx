@@ -1,82 +1,98 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../../services/userService';
-import Swal from 'sweetalert2';
+
+import {
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+} from '@chakra-ui/react';
+import { useFormik } from 'formik';
+import { object, string } from 'yup';
+import { sweetAlert } from '../../utils/alerts';
+
 import './register.scss';
 
 const Register = () => {
   const navigate = useNavigate();
-  const [dataForm, setDataForm] = useState({});
 
   const backToLogin = () => navigate('/login');
 
-  const reset = () => {
-    setDataForm({});
-  };
+  const schema = object({
+    name: string().min(2).required('required field'),
+    email: string().email().required('required field'),
+    password: string()
+      .min(4, 'At least 4 characters')
+      .required('required field'),
+  });
 
-  const handleChangeInputs = event => {
-    const { name, value } = event.target;
-    setDataForm({
-      ...dataForm,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async event => {
-    event.preventDefault();
-
-    const createdUser = await createUser(dataForm);
+  const createNewUser = async values => {
+    const createdUser = await createUser(values);
 
     if (createdUser) {
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Register was successful',
-        text: 'You can now login to your account',
-        showConfirmButton: false,
-        timer: 2000,
-      });
+      sweetAlert(
+        'success',
+        'Register was successful',
+        'You can now login to your account',
+        2000
+      );
       backToLogin();
     } else {
-      Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: 'There was an error creating your account',
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      sweetAlert('error', 'There was an error creating your account');
     }
-    reset();
   };
+
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      password: '',
+    },
+    validationSchema: schema,
+    onSubmit: (values, actions) => {
+      createNewUser(values);
+      actions.resetForm({});
+    },
+  });
 
   return (
     <main className='register__container'>
       <h1 className='register_title'>Create an account</h1>
-      <form className='register_form' onSubmit={handleSubmit}>
-        <label>Your name</label>
-        <input
-          type='text'
-          name='name'
-          value={dataForm.name || ''}
-          onChange={handleChangeInputs}
-        />
-        <label>Your email</label>
-        <input
-          type='email'
-          name='email'
-          value={dataForm.email || ''}
-          onChange={handleChangeInputs}
-        />
-        <label>Your password</label>
-        <input
-          type='password'
-          name='password'
-          value={dataForm.password || ''}
-          onChange={handleChangeInputs}
-        />
+      <form className='register_form' onSubmit={formik.handleSubmit}>
+        <FormControl isInvalid={formik.errors.name} className='formControl'>
+          <FormLabel>Your name</FormLabel>
+          <Input
+            type='text'
+            name='name'
+            onChange={formik.handleChange}
+            value={formik.values.name}
+          />
+          <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
+        </FormControl>
+        <FormControl isInvalid={formik.errors.email} className='formControl'>
+          <FormLabel>Your email</FormLabel>
+          <Input
+            type='email'
+            name='email'
+            onChange={formik.handleChange}
+            value={formik.values.email}
+          />
+          <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+        </FormControl>
+        <FormControl isInvalid={formik.errors.password} className='formControl'>
+          <FormLabel>Your password</FormLabel>
+          <Input
+            type='password'
+            name='password'
+            onChange={formik.handleChange}
+            value={formik.values.password}
+          />
+          <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
+        </FormControl>
         <button type='submit'>Register</button>
         <a className='back_to_login_link' onClick={backToLogin}>
-          Come back to login
+          Return to login
         </a>
       </form>
     </main>

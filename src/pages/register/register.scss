@@ -22,6 +22,7 @@
     color: #6c6cfe;
     text-align: center;
     font-family: Sarabun;
+    font-size: 30px;
     top: 50px;
   }
 
@@ -38,6 +39,14 @@
     border-radius: 10px;
     box-shadow: -4px 3px 22px -6px rgba(0, 0, 0, 0.71);
 
+    .formControl {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
     label {
       font-size: 20px;
       font-weight: 600;
@@ -48,10 +57,7 @@
     input {
       width: 80%;
       height: 40px;
-      margin-top: 10px;
-      margin-bottom: 20px;
       border-radius: 10px;
-      // border: none;
       padding: 10px;
       font-size: 20px;
       font-weight: 600;
