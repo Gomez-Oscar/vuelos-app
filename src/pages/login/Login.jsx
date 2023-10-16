@@ -66,6 +66,7 @@ const Login = () => {
           onChange={handleChangeInputs}
         />
         <button type='submit'>Sign In</button>
+        <a className='create_account_link'>Don't have an account?</a>
       </form>
     </main>
   );

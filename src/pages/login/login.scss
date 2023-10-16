@@ -76,5 +76,18 @@
         box-shadow: -2px 3px 8px -2px rgba(0, 0, 0, 0.71);
       }
     }
+
+    .create_account_link {
+      margin-top: 30px;
+      font-family: Sarabun;
+      font-weight: 600;
+      font-size: 18px;
+      color: #6c6cfe;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
   }
 }
