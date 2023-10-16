@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUserByEmailAndPassword } from '../../services/userService';
+import { createUser } from '../../services/userService';
 import Swal from 'sweetalert2';
-import './login.scss';
+import './register.scss';
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
   const [dataForm, setDataForm] = useState({});
+
+  const backToLogin = () => navigate('/login');
 
   const reset = () => {
     setDataForm({});
@@ -22,24 +24,24 @@ const Login = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    const userFound = await getUserByEmailAndPassword(
-      dataForm.email,
-      dataForm.password
-    );
 
-    if (userFound) {
+    const createdUser = await createUser(dataForm);
+
+    if (createdUser) {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: `Welcome back ${userFound.name}`,
+        title: 'Register was successful',
+        text: 'You can now login to your account',
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2000,
       });
+      backToLogin();
     } else {
       Swal.fire({
         position: 'center',
         icon: 'error',
-        title: `Wrong credentials`,
+        title: 'There was an error creating your account',
         showConfirmButton: false,
         timer: 1500,
       });
@@ -48,13 +50,19 @@ const Login = () => {
   };
 
   return (
-    <main className='login__container'>
-      <h1 className='login_title'>Good to see you again</h1>
-      <form className='login_form' onSubmit={handleSubmit}>
+    <main className='register__container'>
+      <h1 className='register_title'>Create an account</h1>
+      <form className='register_form' onSubmit={handleSubmit}>
+        <label>Your name</label>
+        <input
+          type='text'
+          name='name'
+          value={dataForm.name || ''}
+          onChange={handleChangeInputs}
+        />
         <label>Your email</label>
         <input
           type='email'
-          placeholder='e.g. elon@tesla.com'
           name='email'
           value={dataForm.email || ''}
           onChange={handleChangeInputs}
@@ -62,21 +70,17 @@ const Login = () => {
         <label>Your password</label>
         <input
           type='password'
-          placeholder='e.g. xxxxxxxxxx'
           name='password'
           value={dataForm.password || ''}
           onChange={handleChangeInputs}
         />
-        <button type='submit'>Sign In</button>
-        <a
-          className='create_account_link'
-          onClick={() => navigate('/register')}
-        >
-          Don't have an account?
+        <button type='submit'>Register</button>
+        <a className='back_to_login_link' onClick={backToLogin}>
+          Come back to login
         </a>
       </form>
     </main>
   );
 };
 
-export default Login;
+export default Register;
