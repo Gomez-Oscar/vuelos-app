@@ -9,38 +9,25 @@ import {
 } from '@chakra-ui/react';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
-import Swal from 'sweetalert2';
+import { sweetAlert } from '../../utils/alerts';
+
 import './login.scss';
 
-let schema = object({
-  email: string().email().required('required field'),
-  password: string().required('required field'),
-});
-
 const Login = () => {
+  const schema = object({
+    email: string().email().required('required field'),
+    password: string().required('required field'),
+  });
+
   const findUser = async values => {
     const userFound = await getUserByEmailAndPassword(
       values.email,
       values.password
     );
 
-    if (userFound) {
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: `Welcome back ${userFound.name}`,
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } else {
-      Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: `Wrong credentials`,
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
+    userFound
+      ? sweetAlert('success', `Welcome back ${userFound.name}`)
+      : sweetAlert('error', 'Wrong credentials');
   };
 
   const formik = useFormik({
