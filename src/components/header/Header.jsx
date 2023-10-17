@@ -11,23 +11,17 @@ import userIcon from '../../assets/icons/user-icon.svg';
 import './header.scss';
 
 const Home = () => {
-  /*   let buttonLogin;
+  let buttonLogin;
+  const { isUserLogged } = useContext(AppContext);
 
   useEffect(() => {
     buttonLogin = document.querySelector('.button__login');
-  }, []);
-
-  console.log(buttonLogin);
-
-  const { IsUserLogged } = useContext(AppContext);
-
-  console.log(IsUserLogged); */
-
-  /*   if (IsUserLogged) {
-    buttonLogin.style.display = 'none';
-  } else {
-    buttonLogin.style.display = 'block';
-  } */
+    if (isUserLogged) {
+      buttonLogin.style.display = 'none';
+    } else {
+      buttonLogin.style.display = 'block';
+    }
+  }, [isUserLogged]);
 
   const navigate = useNavigate();
 
