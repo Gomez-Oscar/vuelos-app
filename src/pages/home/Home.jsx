@@ -13,6 +13,7 @@ import mapAvion from "../../assets/img/map-avion.png"
 
 const Home = () => {
   const [startDate, setStartDate] = useState(new Date());
+  const[categories, setCategories] = useState ([])
 
   const [returnedDate, setReturnedDate] = useState(new Date());
 
@@ -28,6 +29,11 @@ const Home = () => {
     e.preventDefault();
     setOpen(!Open);
   };
+  //funcion que permita extraer las categorias del listado de clases que nos suministra la API
+  const getCategories =(bookList) =>{
+    const categoryList = bookList.map((item)=> item.book.asientos)
+
+  }
 
   return (
     <>
@@ -46,6 +52,8 @@ const Home = () => {
             <img src={avatar} alt="" /> 
             <select className="pasajero" >
               <option  value={""}>Pasajeros</option> 
+              <option  value={""}>1 pasajero</option> 
+              <option  value={""}>2 pasajeros</option> 
             </select>
           </button>
           <button className="economy">
