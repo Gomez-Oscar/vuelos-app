@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../routes/Router';
 import { useNavigate } from 'react-router-dom';
 import { getUserByEmailAndPassword } from '../../services/userService';
 
@@ -15,6 +16,9 @@ import { sweetAlert } from '../../utils/alerts';
 import './login.scss';
 
 const Login = () => {
+  // context
+  const { setIsUserLogged, setUserLogged } = useContext(AppContext);
+
   const navigate = useNavigate();
 
   const schema = object({
@@ -28,9 +32,13 @@ const Login = () => {
       values.password
     );
 
-    userFound
-      ? sweetAlert('success', `Welcome back ${userFound.name}`)
-      : sweetAlert('error', 'Wrong credentials');
+    if (userFound) {
+      setUserLogged(userFound);
+      setIsUserLogged(true);
+      sweetAlert('success', `Welcome back ${userFound.name}`);
+    } else {
+      sweetAlert('error', 'Wrong credentials');
+    }
   };
 
   const formik = useFormik({

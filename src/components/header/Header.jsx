@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../../routes/Router';
 
 import avionIcon from '../../assets/icons/avion-icon.svg';
 import buscadorIcon from '../../assets/icons/buscador-icon.svg';
@@ -10,6 +11,24 @@ import userIcon from '../../assets/icons/user-icon.svg';
 import './header.scss';
 
 const Home = () => {
+  /*   let buttonLogin;
+
+  useEffect(() => {
+    buttonLogin = document.querySelector('.button__login');
+  }, []);
+
+  console.log(buttonLogin);
+
+  const { IsUserLogged } = useContext(AppContext);
+
+  console.log(IsUserLogged); */
+
+  /*   if (IsUserLogged) {
+    buttonLogin.style.display = 'none';
+  } else {
+    buttonLogin.style.display = 'block';
+  } */
+
   const navigate = useNavigate();
 
   const goToLogin = () => navigate('/login');

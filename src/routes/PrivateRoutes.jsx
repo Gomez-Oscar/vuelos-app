@@ -1,0 +1,16 @@
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+
+const PrivateRoutes = ({
+  isAuthenticate,
+  redirectPath = '/login',
+  children,
+}) => {
+  if (!isAuthenticate) {
+    return <Navigate to={redirectPath} />;
+  } else {
+    return <div>{children ? children : <Outlet />}</div>;
+  }
+};
+
+export default PrivateRoutes;
