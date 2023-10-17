@@ -1,0 +1,237 @@
+.container__principal {
+  width: 1440px;
+  height: 803px;
+  top: 64px;
+  background-color: white;
+}
+.find__your__flight {
+  width: 278px;
+  height: 56px;
+  margin-top: 64px;
+  margin-left: 132px;
+
+  font-family: Sarabun;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #171a1f;
+}
+.container__button {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-left: 132px;
+  gap: 26px;
+}
+.round__trip {
+  width: 114px;
+  height: 36px;
+  top: 144px;
+  left: 132px;
+  border-radius: 18px;
+  border: none;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+.one__way {
+  width: 101px;
+  height: 36px;
+  top: 144px;
+  left: 259px;
+  border-radius: 18px;
+  color: #0a7956;
+  border: none;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+.cantidad__personas {
+  width: 84px;
+  height: 36px;
+  top: 144px;
+  left: 409px;
+  border-radius: 18px;
+  border: none;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6c6cfe;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.economy {
+  width: 132px;
+  height: 36px;
+  top: 144px;
+  left: 509px;
+  border-radius: 18px;
+  border: none;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6c6cfe;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.lugar__destino {
+  position: relative;
+  width: 507px;
+  height: 100px;
+  margin-top: 30px;
+  margin-left: 132px;
+  border-radius: 6px;
+  background-color: #6c6cfe;
+  &__from {
+    position: absolute;
+    color: white;
+    width: 183px;
+    height: 51px;
+    top: 19px;
+    left: 40px;
+    padding: 3.5px, 79px, 2.5px, 12px;
+    border-radius: 4px;
+  }
+  &__input {
+    border: none;
+    border-bottom: 1px solid white; /* Color y grosor de la línea */
+    outline: none; /* Elimina el contorno al hacer clic */
+    background-color: transparent;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.363);
+    }
+  }
+  &__flechas {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 40.5px;
+    left: 249px;
+  }
+  &__where {
+    position: absolute;
+    color: white;
+    width: 183px;
+    height: 51px;
+    top: 21px;
+    left: 295px;
+    padding: 3.5px, 10px, 2.5px, 12px;
+    border-radius: 4px;
+  }
+}
+.button__lupa {
+  width: 46px;
+  height: 100px;
+  top: 204px;
+  margin-left: 517px;
+  padding: 0px, 13px, 0px, 13px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 10px;
+  justify-content: center;
+  &__Departure__date {
+    width: 167px;
+    height: 44px;
+    top: 328px;
+    margin-left: 132px;
+    padding: 9px, 18px, 9px, 18px;
+    border-radius: 22px;
+    background-color: #fe902b;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    font-family: Sarabun;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fefefe;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &__Returned__date {
+    width: 167px;
+    height: 44px;
+    top: 328px;
+    margin-left: 132px;
+    padding: 9px, 18px, 9px, 18px;
+    border-radius: 22px;
+    background-color: #fe902b;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    font-family: Sarabun;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fefefe;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.mapAvion {
+    position: absolute;
+  width: 447.59px;
+  height: 499.3px;
+  top: 366px;
+  left: 704px;
+  transform: rotate(-9.49°);
+}
+.img__map {
+  width: 720px;
+  height: 373px;
+  top: 366px;
+  left: 765.5px;
+  transform: rotate(-9.49°);
+}
