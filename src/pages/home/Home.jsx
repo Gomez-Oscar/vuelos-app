@@ -3,7 +3,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './home.scss';
 import flechas from '../../assets/icons/flechas-derecha-izquierda.png';
-import flechaDerecha from '../../assets/icons/flecha-derecha.png';
+import flechaDerechaVerde from '../../assets/icons/flecha-derecha-verde.svg';
+import flechaDerechaNegra from '../../assets/icons/flecha-derecha-negra.svg';
 import avatar from '../../assets/icons/avatar.png';
 import tipoHaciento from '../../assets/icons/tipo-de-hacientos-icon.png';
 import flechaDespliegue from '../../assets/icons/flecha-despliegue.png';
@@ -39,7 +40,7 @@ const Home = () => {
             Round trip
           </button>
           <button className='one__way'>
-            <img src={flechaDerecha} alt='flecha__derecha' />
+            <img src={flechaDerechaNegra} alt='flecha__derecha' />
             One way
           </button>
           <button className='cantidad__personas'>

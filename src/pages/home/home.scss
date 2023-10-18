@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Barlow&family=Barlow+Condensed&family=Bellefair&family=Courgette&family=Epilogue:wght@500;700&family=Josefin+Sans:wght@300&family=Quicksand&family=Sarabun:wght@400;600;700&family=Space+Grotesk&display=swap');
+
 .container__principal {
+  font-family: Sarabun;
+  position: relative;
   width: 1440px;
   height: 803px;
   top: 64px;
   background-color: white;
   margin: auto;
-  
 }
 .find__your__flight {
   width: 278px;
@@ -52,7 +55,7 @@
   top: 144px;
   left: 259px;
   border-radius: 18px;
-  color: #0a7956;
+  // color: #0a7956;
   border: none;
 
   font-family: Sarabun;
@@ -107,7 +110,6 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  cursor: pointer;
 }
 .economy {
   width: 120px;
@@ -129,6 +131,7 @@
   gap: 20px;
   cursor: pointer;
 }
+
 .clase {
   left: 509px;
   color: #6c6cfe;
@@ -140,7 +143,6 @@
   border: none;
   outline: none; /* Elimina el contorno al hacer clic */
   background-color: transparent;
-
 }
 .lugar__destino {
   position: relative;
@@ -155,6 +157,8 @@
     color: white;
     width: 183px;
     height: 51px;
+    font-size: 14px;
+    font-weight: 700;
     top: 19px;
     left: 40px;
     padding: 3.5px, 79px, 2.5px, 12px;
@@ -162,6 +166,10 @@
   }
   &__input {
     border: none;
+    padding: 5px;
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
     border-bottom: 1px solid white; /* Color y grosor de la línea */
     outline: none; /* Elimina el contorno al hacer clic */
     background-color: transparent;
@@ -181,6 +189,7 @@
     color: white;
     width: 183px;
     height: 51px;
+    font-size: 14px;
     top: 21px;
     left: 295px;
     padding: 3.5px, 10px, 2.5px, 12px;
@@ -262,13 +271,13 @@
   position: absolute;
   width: 447.59px;
   height: 499.3px;
-  top: 366px;
+  top: 300px;
   left: 704px;
   transform: rotate(-9.49°);
 }
 .img__map {
   width: 720px;
-  height: 373px;
+  height: 400px;
   top: 366px;
   left: 765.5px;
   transform: rotate(-9.49°);
