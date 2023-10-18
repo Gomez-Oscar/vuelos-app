@@ -3,6 +3,8 @@
   height: 803px;
   top: 64px;
   background-color: white;
+  margin: auto;
+  
 }
 .find__your__flight {
   width: 278px;
@@ -65,7 +67,7 @@
   cursor: pointer;
 }
 .cantidad__personas {
-  width: 84px;
+  width: 120px;
   height: 36px;
   top: 144px;
   left: 409px;
@@ -81,11 +83,34 @@
   color: #6c6cfe;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  cursor: pointer;
+}
+.pasajero {
+  color: #6c6cfe;
+  font-family: Sarabun;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  border: none;
+  outline: none; /* Elimina el contorno al hacer clic */
+  background-color: transparent;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 7px;
   cursor: pointer;
 }
 .economy {
-  width: 132px;
+  width: 120px;
   height: 36px;
   top: 144px;
   left: 509px;
@@ -101,8 +126,21 @@
   color: #6c6cfe;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 20px;
   cursor: pointer;
+}
+.clase {
+  left: 509px;
+  color: #6c6cfe;
+  font-family: Sarabun;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  border: none;
+  outline: none; /* Elimina el contorno al hacer clic */
+  background-color: transparent;
+
 }
 .lugar__destino {
   position: relative;
@@ -221,7 +259,7 @@
 }
 
 .mapAvion {
-    position: absolute;
+  position: absolute;
   width: 447.59px;
   height: 499.3px;
   top: 366px;

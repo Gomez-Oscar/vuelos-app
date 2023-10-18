@@ -43,11 +43,16 @@ const Home = () => {
             One way
           </button>
           <button className='cantidad__personas'>
-            <img src={avatar} alt='' />1 <img src={flechaDespliegue} alt='' />
+            <img src={avatar} alt='' />
+            <select className='pasajero'>
+              <option value={''}>Pasajeros</option>
+            </select>
           </button>
           <button className='economy'>
             <img src={tipoHaciento} alt='' />
-            Economy <img src={flechaDespliegue} alt='' />
+            <select className='clase'>
+              <option value={''}>Clase</option>
+            </select>
           </button>
         </section>
         <nav className='lugar__destino'>
