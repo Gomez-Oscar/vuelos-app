@@ -6,7 +6,7 @@
   box-sizing: 'border-box';
 }
 
-.login__container {
+.register__container {
   border: solid black 1px;
 
   display: flex;
@@ -17,7 +17,7 @@
   width: 1440px;
   height: 803px;
 
-  .login_title {
+  .register_title {
     position: absolute;
     color: #6c6cfe;
     text-align: center;
@@ -26,7 +26,7 @@
     top: 50px;
   }
 
-  .login_form {
+  .register_form {
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     label {
@@ -83,7 +83,7 @@
       }
     }
 
-    .create_account_link {
+    .back_to_login_link {
       margin-top: 30px;
       font-family: Sarabun;
       font-weight: 600;

@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../../routes/Router';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUserByEmailAndPassword } from '../../services/userService';
+import { createUser } from '../../services/userService';
 
 import {
   FormControl,
@@ -13,50 +12,64 @@ import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import { sweetAlert } from '../../utils/alerts';
 
-import './login.scss';
+import './register.scss';
 
-const Login = () => {
-  // context
-  const { setIsUserLogged, setUserLogged } = useContext(AppContext);
-
+const Register = () => {
   const navigate = useNavigate();
 
+  const backToLogin = () => navigate('/login');
+
   const schema = object({
+    name: string().min(2).required('required field'),
     email: string().email().required('required field'),
-    password: string().required('required field'),
+    password: string()
+      .min(4, 'At least 4 characters')
+      .required('required field'),
   });
 
-  const findUser = async values => {
-    const userFound = await getUserByEmailAndPassword(
-      values.email,
-      values.password
-    );
+  const createNewUser = async values => {
+    const createdUser = await createUser(values);
 
-    if (userFound) {
-      setUserLogged(userFound);
-      setIsUserLogged(true);
-      sweetAlert('success', `Welcome back ${userFound.name}`);
+    if (createdUser) {
+      sweetAlert(
+        'success',
+        'Register was successful',
+        'You can now login to your account',
+        2000
+      );
+      backToLogin();
     } else {
-      sweetAlert('error', 'Wrong credentials');
+      sweetAlert('error', 'There was an error creating your account');
     }
   };
 
   const formik = useFormik({
     initialValues: {
+      name: '',
       email: '',
       password: '',
     },
     validationSchema: schema,
     onSubmit: (values, actions) => {
-      findUser(values);
+      createNewUser(values);
       actions.resetForm({});
     },
   });
 
   return (
-    <main className='login__container'>
-      <h1 className='login_title'>Good to see you again</h1>
-      <form className='login_form' onSubmit={formik.handleSubmit}>
+    <main className='register__container'>
+      <h1 className='register_title'>Create an account</h1>
+      <form className='register_form' onSubmit={formik.handleSubmit}>
+        <FormControl isInvalid={formik.errors.name} className='formControl'>
+          <FormLabel>Your name</FormLabel>
+          <Input
+            type='text'
+            name='name'
+            onChange={formik.handleChange}
+            value={formik.values.name}
+          />
+          <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
+        </FormControl>
         <FormControl isInvalid={formik.errors.email} className='formControl'>
           <FormLabel>Your email</FormLabel>
           <Input
@@ -71,23 +84,19 @@ const Login = () => {
           <FormLabel>Your password</FormLabel>
           <Input
             type='password'
-            className='input'
             name='password'
             onChange={formik.handleChange}
             value={formik.values.password}
           />
           <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
         </FormControl>
-        <button type='submit'>Sign In</button>
-        <a
-          className='create_account_link'
-          onClick={() => navigate('/register')}
-        >
-          Don't have an account?
+        <button type='submit'>Register</button>
+        <a className='back_to_login_link' onClick={backToLogin}>
+          Return to login
         </a>
       </form>
     </main>
   );
 };
 
-export default Login;
+export default Register;
