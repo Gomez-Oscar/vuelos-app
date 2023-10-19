@@ -48,14 +48,19 @@
   align-items: center;
   gap: 7px;
   cursor: pointer;
+
+  &:hover {
+    color: #0a7956;
+    background-color: #ecfdf7;
+  }
 }
+
 .one__way {
   width: 101px;
   height: 36px;
   top: 144px;
   left: 259px;
   border-radius: 18px;
-  // color: #0a7956;
   border: none;
 
   font-family: Sarabun;
@@ -68,7 +73,23 @@
   align-items: center;
   gap: 7px;
   cursor: pointer;
+
+  &:hover {
+    color: #0a7956;
+    background-color: #ecfdf7;
+  }
 }
+
+.active {
+  color: #0a7956;
+  background-color: #ecfdf7;
+}
+
+.inactive {
+  color: black;
+  background-color: #f2f3f5;
+}
+
 .cantidad__personas {
   width: 120px;
   height: 36px;
@@ -208,6 +229,7 @@
   align-items: center;
 }
 .calendar {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -265,6 +287,15 @@
       opacity: 0.5;
     }
   }
+}
+
+.datepicker__container {
+  position: absolute;
+  width: 245px;
+  height: 240px;
+  top: 0px;
+  left: 327px;
+  border-radius: 8px;
 }
 
 .mapAvion {
