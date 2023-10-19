@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./home.scss";
@@ -9,11 +9,15 @@ import tipoHaciento from "../../assets/icons/tipo-de-hacientos-icon.png";
 import flechaDespliegue from "../../assets/icons/flecha-despliegue.png";
 import buttonLupa from "../../assets/icons/Button-lupa.png";
 import dateIcon from "../../assets/icons/date-icon.png";
-import mapAvion from "../../assets/img/map-avion.png"
+import mapAvion from "../../assets/img/map-avion.png";
+import { obtenerDatosVuelos } from "../../services/userService";
 
 const Home = () => {
+  const [clase, setClase] = useState('clase_economica');
+  const [vuelo, setVuelos] = useState([]);
+  const [asientosPorClase, setAsientosPorClase] = useState({}); // Almacenar asientos por clase
+
   const [startDate, setStartDate] = useState(new Date());
-  const[categories, setCategories] = useState ([])
 
   const [returnedDate, setReturnedDate] = useState(new Date());
 
@@ -28,12 +32,23 @@ const Home = () => {
   const handleClickReturn = (e) => {
     e.preventDefault();
     setOpen(!Open);
+    
   };
-  //funcion que permita extraer las categorias del listado de clases que nos suministra la API
-  const getCategories =(bookList) =>{
-    const categoryList = bookList.map((item)=> item.book.asientos)
+  useEffect(() => {
+    const fetchData = async () => {
+      const datosVuelos = await obtenerDatosVuelos();
+      setVuelos(datosVuelos);
+      // Organizar asientos por clase
+      const asientos = {};
+      datosVuelos.forEach((vuelo) => {
+        asientos[vuelo.id] = vuelo.asientos;
+      });
+      setAsientosPorClase(asientos);
+      console.log(asientos)
+    };
 
-  }
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -48,18 +63,20 @@ const Home = () => {
             <img src={flechaDerecha} alt="flecha__derecha" />
             One way
           </button>
+          <button className="economy">
+            <img className="economy__img" src={tipoHaciento} alt="" />
+            <select className="clase" onChange={(e) => setClase(e.target.value)} value={clase}>
+              <option value="clase_economica">Clase Económica</option>
+              <option value="clase_ejecutiva">Clase ejecutiva</option>
+              <option value="primera_clase">Primera clase</option>
+            </select>
+          </button>  
           <button className="cantidad__personas">
             <img src={avatar} alt="" /> 
             <select className="pasajero" >
-              <option  value={""}>Pasajeros</option> 
-              <option  value={""}>1 pasajero</option> 
-              <option  value={""}>2 pasajeros</option> 
-            </select>
-          </button>
-          <button className="economy">
-            <img src={tipoHaciento} alt="" />
-            <select className="clase">
-              <option value={""}>Clase</option>
+              <option  value={""}>1 Pasajeros</option> 
+              <option  value={""}>2 pasajero</option> 
+              <option  value={""}>3 pasajeros</option> 
             </select>
           </button>
         </section>
@@ -114,9 +131,9 @@ const Home = () => {
         <aside className="mapAvion">
           <img className="img__map" src={mapAvion} alt="" />
         </aside>
+          
       </main>
     </>
-  );
-};
+    )}
 
 export default Home;
