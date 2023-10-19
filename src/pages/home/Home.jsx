@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getFlights } from '../../services/vuelosService';
+import useFilter from '../../components/hooks/useFilter';
+
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './home.scss';
+
 import flechasNegras from '../../assets/icons/flechas-negras.svg';
 import flechasVerdes from '../../assets/icons/flechas-verdes.svg';
 import flechaDerechaVerde from '../../assets/icons/flecha-derecha-verde.svg';
@@ -21,6 +25,11 @@ const Home = () => {
 
   const [hideReturnDatebutton, setHideReturnDatebutton] = useState(false);
 
+  const { filters, filterResult, responseFilter, setFilters, handleFilter } =
+    useFilter();
+
+  const [flights, setFlights] = useState({});
+
   const handleOneWayClick = () => {
     setHideReturnDatebutton(true);
   };
@@ -35,10 +44,19 @@ const Home = () => {
   const handleClickReturn = () => {
     setOpen(!Open);
   };
-  //funcion que permita extraer las categorias del listado de clases que nos suministra la API
-  const getCategories = bookList => {
-    const categoryList = bookList.map(item => item.book.asientos);
-  };
+
+  useEffect(() => {
+    getFlights().then(response => {
+      setFlights(response);
+      // console.log(flights);
+      setFilters({ ...filters });
+    });
+  }, []);
+
+  const onFilter = event => handleFilter(event, flights);
+
+  console.log(filterResult);
+  // console.log(responseFilter);
 
   return (
     <>
@@ -99,6 +117,9 @@ const Home = () => {
               className='lugar__destino__input'
               type='text'
               placeholder='Houston (HOU)'
+              name='origen'
+              onChange={onFilter}
+              value={filters.origen || ''}
             />
           </div>
           <img className='lugar__destino__flechas' src={flechasNegras} alt='' />
