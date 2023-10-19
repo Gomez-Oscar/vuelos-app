@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Barlow&family=Barlow+Condensed&family=Bellefair&family=Courgette&family=Epilogue:wght@500;700&family=Josefin+Sans:wght@300&family=Quicksand&family=Sarabun:wght@400;600;700&family=Space+Grotesk&display=swap');
+
 .container__principal {
+  font-family: Sarabun;
+  position: relative;
   width: 1440px;
   height: 803px;
   top: 64px;
   background-color: white;
-  margin: auto; 
+  margin: auto;
 }
 .find__your__flight {
   width: 289px;
@@ -44,14 +48,19 @@
   align-items: center;
   gap: 7px;
   cursor: pointer;
+
+  &:hover {
+    color: #0a7956;
+    background-color: #ecfdf7;
+  }
 }
+
 .one__way {
   width: 101px;
   height: 36px;
   top: 144px;
   left: 259px;
   border-radius: 18px;
-  color: #0a7956;
   border: none;
 
   font-family: Sarabun;
@@ -64,7 +73,23 @@
   align-items: center;
   gap: 7px;
   cursor: pointer;
+
+  &:hover {
+    color: #0a7956;
+    background-color: #ecfdf7;
+  }
 }
+
+.active {
+  color: #0a7956;
+  background-color: #ecfdf7;
+}
+
+.inactive {
+  color: black;
+  background-color: #f2f3f5;
+}
+
 .cantidad__personas {
   width: 80px;
   height: 36px;
@@ -104,7 +129,6 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  cursor: pointer;
 }
 .economy {
   width: 140px;
@@ -137,7 +161,6 @@
   border: none;
   outline: none; /* Elimina el contorno al hacer clic */
   background-color: transparent;
-
 }
 .lugar__destino {
   position: relative;
@@ -152,6 +175,8 @@
     color: white;
     width: 183px;
     height: 51px;
+    font-size: 14px;
+    font-weight: 700;
     top: 19px;
     left: 40px;
     padding: 3.5px, 79px, 2.5px, 12px;
@@ -159,6 +184,10 @@
   }
   &__input {
     border: none;
+    padding: 5px;
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
     border-bottom: 1px solid white; /* Color y grosor de la línea */
     outline: none; /* Elimina el contorno al hacer clic */
     background-color: transparent;
@@ -178,6 +207,7 @@
     color: white;
     width: 183px;
     height: 51px;
+    font-size: 14px;
     top: 21px;
     left: 295px;
     padding: 3.5px, 10px, 2.5px, 12px;
@@ -196,6 +226,7 @@
   align-items: center;
 }
 .calendar {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -255,16 +286,26 @@
   }
 }
 
+.datepicker__container {
+  position: absolute;
+  width: 245px;
+  height: 240px;
+  top: 0px;
+  left: 327px;
+  border-radius: 8px;
+}
+
 .mapAvion {
   position: absolute;
-  width: 1440px;
-  height: 803px;
-  top: 366px;
-  left: 642px;
+  width: 447.59px;
+  height: 499.3px;
+  top: 300px;
+  left: 704px;
+  transform: rotate(-9.49°);
 }
 .img__map {
-  width: 797px;
-  height: 373px;
+  width: 720px;
+  height: 400px;
   top: 366px;
   left: 765.5px;
 }

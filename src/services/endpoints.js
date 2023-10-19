@@ -3,6 +3,7 @@ const URL_BASE = 'https://vuelos-backend.onrender.com/';
 
 const endpoints = {
   users: `${URL_BASE}users`,
+  vuelos: `${URL_BASE}vuelos`,
   user: (email, password) =>
     `${URL_BASE}users?email=${email}&&password=${password}`,
 };
