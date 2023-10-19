@@ -27,13 +27,15 @@ const Router = () => {
         <AppContext.Provider value={globalState}>
           <Routes>
             <Route element={<Layout />}>
-              <Route element={<PrivateRoutes isAuthenticate={isUserLogged} />}>
+             {/*  <Route element={<PrivateRoutes isAuthenticate={isUserLogged} />}>
                 <Route path='/home' element={<Home />} />
-              </Route>
-              <Route element={<PublicRoutes isAuthenticate={isUserLogged} />}>
+              </Route> */}
+             {/*  <Route element={<PublicRoutes isAuthenticate={isUserLogged} />}>
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
-              </Route>
+
+              </Route> */}
+               <Route path='/' element={<Home />} />
             </Route>
           </Routes>
         </AppContext.Provider>
