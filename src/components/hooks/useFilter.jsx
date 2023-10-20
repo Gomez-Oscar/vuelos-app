@@ -12,11 +12,15 @@ const useFilter = (initalValue = {}) => {
       [name]: value,
     };
 
+    console.log(filterParams);
+
     let filtered = [...flights];
     for (const key in filterParams) {
       if (filterParams[key]) {
-        const filteredResult = filtered.filter(
-          element => element[key] == filterParams[key]
+        const filteredResult = filtered.filter(element =>
+          key !== 'fecha_salida'
+            ? element[key].toLowerCase() == filterParams[key].toLowerCase()
+            : new Date(element[key]).toLocaleDateString() == filterParams[key]
         );
         filtered = [...filteredResult];
       }

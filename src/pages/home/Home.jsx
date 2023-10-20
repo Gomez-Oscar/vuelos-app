@@ -20,6 +20,9 @@ const Home = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [returnedDate, setReturnedDate] = useState(new Date());
 
+  console.log('departure:', new Date(startDate).toLocaleDateString());
+  // console.log('returned:', new Date(returnedDate).toLocaleDateString());
+
   const [isOpen, setIsOpen] = useState(false);
   const [Open, setOpen] = useState(false);
 
@@ -53,7 +56,18 @@ const Home = () => {
     });
   }, []);
 
-  const onFilter = event => handleFilter(event, flights);
+  const handleOriginAndDestinaion = event => handleFilter(event, flights);
+
+  const handleDatePicker = date => {
+    const event = {
+      target: {
+        name: 'fecha_salida',
+        value: date.toLocaleDateString(),
+      },
+    };
+    setStartDate(date);
+    handleFilter(event, flights);
+  };
 
   console.log(filterResult);
   // console.log(responseFilter);
@@ -118,7 +132,7 @@ const Home = () => {
               type='text'
               placeholder='Houston (HOU)'
               name='origen'
-              onChange={onFilter}
+              onChange={handleOriginAndDestinaion}
               value={filters.origen || ''}
             />
           </div>
@@ -129,6 +143,9 @@ const Home = () => {
               className='lugar__destino__input'
               type='text'
               placeholder='Where is your destination?'
+              name='destino'
+              onChange={handleOriginAndDestinaion}
+              value={filters.destino || ''}
             />
           </div>
           <button className='button__lupa'>
@@ -143,11 +160,12 @@ const Home = () => {
           {isOpen && (
             <div className='datepicker__container'>
               <DatePicker
-                className='DatePicker'
                 selected={startDate}
-                onChange={date => setStartDate(date)}
+                onChange={date => handleDatePicker(date)}
                 open={isOpen}
-                // inline
+                inline
+                name='fecha_salida'
+                value={filters.fecha_salida || ''}
               />
             </div>
           )}
@@ -160,16 +178,16 @@ const Home = () => {
               Returned date
             </button>
           )}
-          <div className='datepicker__container'>
-            {Open && (
+          {Open && (
+            <div className='datepicker__container'>
               <DatePicker
                 selected={returnedDate}
                 onChange={date => setReturnedDate(date)}
                 open={Open}
-                // inline
+                inline
               />
-            )}
-          </div>
+            </div>
+          )}
         </section>
         <aside className='mapAvion'>
           <img className='img__map' src={mapAvion} alt='' />
