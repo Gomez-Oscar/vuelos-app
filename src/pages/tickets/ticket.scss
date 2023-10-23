@@ -1,0 +1,536 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: "border-box";
+}
+.ticket__container {
+  width: 1440px;
+  height: 1203px;
+  &__title {
+    width: 167px;
+    height: 48px;
+    margin-top: 70px;
+    margin-left: 132px;
+
+    font-family: Sarabun;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #171a1f;
+  }
+  &__viñet {
+    display: flex;
+    & img {
+      width: 24px;
+      height: 24px;
+      margin-top: 185px;
+      margin-left: 127px;
+    }
+  }
+  &__viñetaicon {
+    width: 280px;
+    height: 30px;
+    margin-top: 182px;
+    margin-left: 6px;
+    color: #6c6cfe;
+    font-family: Sarabun;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &__present {
+    width: 317px;
+    height: 22px;
+    margin-top: 10px;
+    margin-left: 133px;
+
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+.container__detalles {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 782px;
+  height: 342px;
+  margin-top: 40px;
+  margin-left: 132px;
+  border-radius: 6px;
+  background-color: #ece6e6;
+}
+.container__cloudy {
+  width: 150px;
+  display: flex;
+  &__nube {
+    width: 28px;
+    height: 28px;
+    margin-top: 32px;
+    margin-left: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    color: #0d78c8;
+  }
+  &__airlines {
+    width: 204px;
+    height: 22px;
+    margin-top: 35px;
+    margin-left: 5px;
+
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+.container__maletin {
+  position: absolute;
+  display: flex;
+  margin-top: 40px;
+  margin-left: -120px;
+  gap: 15px;
+  &__img {
+    width: 16px;
+    height: 16px;
+    margin-top: 9x;
+    margin-left: 516px;
+    padding: 1.33px, 1.33px, 2px, 1.33px;
+    color: #0ea776;
+  }
+}
+.container__maletin__peso1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #afb1b4;
+  width: 54px;
+  height: 28px;
+  border-radius: 14px;
+
+  font-family: Sarabun;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.container__maletin__peso2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #afb1b4;
+  width: 48px;
+  height: 28px;
+  margin-left: 3px;
+  border-radius: 14px;
+
+  font-family: Sarabun;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.Passenger {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 192px;
+  height: 26px;
+  top: 68px;
+  left: 24px;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  &__nombre {
+    font-family: Sarabun;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+.clase__icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 105px;
+  left: 24px;
+  padding: 1.33px, 1.67px, 2px, 1.67px;
+}
+.clase__economy {
+  position: absolute;
+  width: 56px;
+  height: 22px;
+  top: 102px;
+  left: 48px;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #fe902b;
+}
+.container__hours {
+  position: absolute;
+  display: flex;
+  &__hour1 {
+    position: absolute;
+    width: 80px;
+    height: 48px;
+    top: 132px;
+    left: 24px;
+
+    font-family: Sarabun;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2424fe;
+  }
+  &__destino1 {
+    position: absolute;
+    width: 93px;
+    height: 22px;
+    top: 177px;
+    left: 24px;
+
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #171a1f;
+  }
+  &__fecha1 {
+    position: absolute;
+    width: 71px;
+    height: 22px;
+    top: 199px;
+    left: 24px;
+
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #8f949f;
+  }
+  &__hour2 {
+    position: absolute;
+    width: 62px;
+    height: 48px;
+    top: 132px;
+    left: 249px;
+
+    font-family: Sarabun;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2424fe;
+  }
+  &__destino2 {
+    position: absolute;
+    width: 96px;
+    height: 22px;
+    top: 177px;
+    left: 249px;
+
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #171a1f;
+  }
+  &__fecha2 {
+    position: absolute;
+    width: 79px;
+    height: 22px;
+    top: 199px;
+    left: 247px;
+
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #8f949f;
+  }
+}
+.oval__icon1 {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 240px;
+  left: 67px;
+  border: 1px;
+  color: #6c6cfe;
+}
+.line__icon {
+  width: 223px;
+  height: 1px;
+  margin-top: 242px;
+  margin-left: 75px;
+  border: 1px solid #6c6cfe;
+}
+.oval__icon2 {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 240px;
+  left: 298px;
+  border: 1px;
+  color: #6c6cfe;
+}
+.time__icon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 258px;
+  left: 151px;
+  padding: 1px, 1px, 1px, 1px;
+}
+.time__hour {
+  position: absolute;
+  width: 43px;
+  height: 22px;
+  top: 253px;
+  left: 167px;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.codigo__barras {
+  position: absolute;
+  width: 50px;
+  height: 120px;
+  left: 500px;
+  top: 120px;
+}
+.check {
+  position: absolute;
+  width: 195px;
+  height: 22px;
+  top: 300px;
+  left: 24px;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #171a1f;
+}
+.all__time {
+  position: absolute;
+  width: 170px;
+  height: 22px;
+  top: 300px;
+  left: 373px;
+
+  font-family: Sarabun;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6e7786;
+}
+.container__ticket {
+  position: absolute;
+  width: 213.16px;
+  height: 343.67px;
+  top: -0.98px;
+  left: 569.42px;
+  background-color: #0a7956;
+  border-radius: 8px;
+}
+.container__header {
+  position: relative;
+  display: flex;
+  margin-left: 25px;
+  &__avion__icon {
+    position: absolute;
+    width: 36px;
+    height: 35px;
+    top: 24px;
+    left: 14px;
+    padding: 0px, 0px, 0px, 0.08px;
+    color: white;
+  }
+  &__eflight {
+    position: absolute;
+    width: 67px;
+    height: 30px;
+    top: 27px;
+    left: 92px;
+    color: white;
+
+    font-family: Sarabun;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+.container__booking {
+  position: absolute;
+  width: 107px;
+  height: 63px;
+  top: 83px;
+  left: 23px;
+  &__id {
+    width: 67px;
+    height: 22px;
+    top: 83px;
+    left: 593px;
+
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+  &__numero {
+    width: 107px;
+    height: 36px;
+    top: 110px;
+    left: 593px;
+
+    font-family: Sarabun;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+}
+.container__airline {
+  width: 129px;
+  height: 63px;
+  top: 160px;
+  left: 593px;
+  &__title {
+    position: absolute;
+    width: 129px;
+    height: 22px;
+    top: 160px;
+    left: 23px;
+
+    font-family: Sarabun;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+  &__codigo {
+    position: absolute;
+    width: 91px;
+    height: 36px;
+    top: 187px;
+    left: 23px;
+
+    font-family: Sarabun;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+}
+.barras__horizontal {
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  top: 245.74px;
+  left: 40px;
+}
+.send__to__my {
+  position: absolute;
+  width: 782px;
+  height: 44px;
+  top: 387px;
+  left: 4px;
+  padding: 9px, 0px, 9px, 0px;
+  border-radius: 4px;
+  background-color: #11d295;
+}
+.container__details {
+  position: absolute;
+  display: flex;
+  width: 328px;
+  height: 280px;
+  top: -652px;
+  left: 910px;
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+.container__header__details {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  margin-left: 0px;
+  border-bottom: 1px solid #dde0e5;
+  margin-bottom: 200px;
+  width: 330px;
+}
+.container__details__simbolo___peso {
+  /* position: absolute; */
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  left: 10px;
+  color: #11d396;
+}
+.container__details__price {
+  width: 112px;
+  height: 30px;
+  top: 16px;
+  left: 37px;
+
+  font-family: Sarabun;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}

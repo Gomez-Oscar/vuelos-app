@@ -7,6 +7,7 @@ import Login from '../pages/login/Login';
 import Register from '../pages/register/Register';
 import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
+import Ticket from '../pages/tickets/ticket';
 
 export const AppContext = createContext({});
 
@@ -35,7 +36,7 @@ const Router = () => {
                 <Route path='/register' element={<Register />} />
 
               </Route> */}
-               <Route path='/' element={<Home />} />
+               <Route path='/' element={<Ticket />} />
             </Route>
           </Routes>
         </AppContext.Provider>
