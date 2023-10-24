@@ -36,6 +36,7 @@ const Router = () => {
                 <Route path='/register' element={<Register />} />
               </Route> */}
               <Route path='/' element={<Home />} />
+              <Route path='/tickets' element={<Ticket />} />
             </Route>
           </Routes>
         </AppContext.Provider>
