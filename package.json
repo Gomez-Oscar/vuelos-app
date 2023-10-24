@@ -16,6 +16,7 @@
     "react": "^18.2.0",
     "react-datepicker": "^4.21.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.47.0",
     "react-router-dom": "^6.16.0",
     "sass": "^1.69.3",
     "sweetalert2": "^11.7.32",

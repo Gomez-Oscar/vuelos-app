@@ -9,6 +9,7 @@ import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
 import Ticket from '../pages/tickets/ticket';
 import Detalles from '../pages/detalles-vuelo/detalles.jsx';
+import Formulario from '../components/booking/Booking';
 
 export const AppContext = createContext({});
 
@@ -32,6 +33,7 @@ const Router = () => {
               {/* <Route element={<PrivateRoutes isAuthenticate={isUserLogged} />}> */}
               <Route path='/home' element={<Home />} />
               <Route path='/detalles' element={<Detalles />} />
+              <Route path='/booking' element={<Formulario />} />
               {/* </Route> */}
               <Route element={<PublicRoutes isAuthenticate={isUserLogged} />}>
                 <Route path='/login' element={<Login />} />
