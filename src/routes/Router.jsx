@@ -7,6 +7,7 @@ import Login from '../pages/login/Login';
 import Register from '../pages/register/Register';
 import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
+import Booking from "../components/booking/Booking"
 
 export const AppContext = createContext({});
 
