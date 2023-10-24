@@ -25,8 +25,8 @@ const Router = () => {
   };
 
   return (
-    <ChakraProvider>
-      <BrowserRouter basename='/vuelos-app'>
+    <ChakraProvider basename='/vuelos-app'>
+      <BrowserRouter>
         <AppContext.Provider value={globalState}>
           <Routes>
             <Route element={<Layout />}>
