@@ -8,6 +8,7 @@ import Register from '../pages/register/Register';
 import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
 import Ticket from '../pages/tickets/ticket';
+import Detalles from '../pages/detalles-vuelo/detalles.jsx';
 
 export const AppContext = createContext({});
 
@@ -28,15 +29,14 @@ const Router = () => {
         <AppContext.Provider value={globalState}>
           <Routes>
             <Route element={<Layout />}>
-              {/* <Route element={<PrivateRoutes isAuthenticate={isUserLogged} />}>
-                <Route path='/home' element={<Home />} />
-              </Route>
+              {/* <Route element={<PrivateRoutes isAuthenticate={isUserLogged} />}> */}
+              <Route path='/home' element={<Home />} />
+              <Route path='/detalles' element={<Detalles />} />
+              {/* </Route> */}
               <Route element={<PublicRoutes isAuthenticate={isUserLogged} />}>
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
-              </Route> */}
-              <Route path='/' element={<Home />} />
-              <Route path='/tickets' element={<Ticket />} />
+              </Route>
             </Route>
           </Routes>
         </AppContext.Provider>

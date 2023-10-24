@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getFlights } from '../../services/vuelosService';
 import useFilter from '../../components/hooks/useFilter';
+import { useNavigate } from 'react-router-dom';
 
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -17,7 +18,10 @@ import dateIcon from '../../assets/icons/date-icon.png';
 import mapAvion from '../../assets/img/map-avion.png';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [startDate, setStartDate] = useState(new Date());
+
   const [returnedDate, setReturnedDate] = useState(new Date());
 
   console.log('departure:', new Date(startDate).toLocaleDateString());
@@ -47,7 +51,6 @@ const Home = () => {
   const handleClickReturn = () => {
     setOpen(!Open);
   };
-
   useEffect(() => {
     getFlights().then(response => {
       setFlights(response);
@@ -109,18 +112,20 @@ const Home = () => {
             )}
             One way
           </button>
+          <button className='economy'>
+            <img className='economy__img' src={tipoHaciento} alt='' />
+            <select className='clase'>
+              <option value='clase_economica'>Clase Económica</option>
+              <option value='clase_ejecutiva'>Clase ejecutiva</option>
+              <option value='primera_clase'>Primera clase</option>
+            </select>
+          </button>
           <button className='cantidad__personas'>
             <img src={avatar} alt='' />
             <select className='pasajero'>
-              <option value={''}>Pasajeros</option>
-              <option value={''}>1 pasajero</option>
-              <option value={''}>2 pasajeros</option>
-            </select>
-          </button>
-          <button className='economy'>
-            <img src={tipoHaciento} alt='' />
-            <select className='clase'>
-              <option value={''}>Clase</option>
+              <option value={''}>1 Pasajeros</option>
+              <option value={''}>2 pasajero</option>
+              <option value={''}>3 pasajeros</option>
             </select>
           </button>
         </section>
@@ -148,7 +153,10 @@ const Home = () => {
               value={filters.destino || ''}
             />
           </div>
-          <button className='button__lupa'>
+          <button
+            className='button__lupa'
+            onClick={() => navigate('/detalles')}
+          >
             <img src={buttonLupa} alt='' />
           </button>
         </nav>

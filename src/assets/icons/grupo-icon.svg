@@ -1,0 +1,10 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame">
+<path id="Vector" d="M14.5 14C15.3284 14 16 13.3284 16 12.5C16 11.6716 15.3284 11 14.5 11C13.6716 11 13 11.6716 13 12.5C13 13.3284 13.6716 14 14.5 14Z" stroke="#323842" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square"/>
+<path id="Vector_2" d="M5.5 14C6.32843 14 7 13.3284 7 12.5C7 11.6716 6.32843 11 5.5 11C4.67157 11 4 11.6716 4 12.5C4 13.3284 4.67157 14 5.5 14Z" stroke="#323842" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square"/>
+<path id="Vector_3" d="M13 9V8.5085C13 8.1535 12.814 7.827 12.5085 7.646C12.022 7.3585 11.179 7 10 7C8.806 7 7.968 7.3565 7.487 7.644C7.184 7.825 7 8.1505 7 8.5035L7 9L13 9Z" stroke="#323842" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square"/>
+<path id="Vector_4" d="M8.5 17.5V17.0085C8.5 16.6535 8.314 16.327 8.0085 16.146C7.522 15.8585 6.679 15.5 5.5 15.5C4.306 15.5 3.468 15.8565 2.987 16.144C2.684 16.325 2.5 16.6505 2.5 17.0035V17.5H8.5Z" stroke="#323842" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square"/>
+<path id="Vector_5" d="M17.5 17.5V17.0085C17.5 16.6535 17.314 16.327 17.0085 16.146C16.522 15.8585 15.679 15.5 14.5 15.5C13.306 15.5 12.468 15.8565 11.987 16.144C11.684 16.325 11.5 16.6505 11.5 17.0035V17.5H17.5Z" stroke="#323842" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square"/>
+<path id="Vector_6" d="M10 5.5C10.8284 5.5 11.5 4.82843 11.5 4C11.5 3.17157 10.8284 2.5 10 2.5C9.17157 2.5 8.5 3.17157 8.5 4C8.5 4.82843 9.17157 5.5 10 5.5Z" stroke="#323842" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square"/>
+</g>
+</svg>

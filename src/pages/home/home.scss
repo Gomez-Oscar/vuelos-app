@@ -10,7 +10,7 @@
   margin: auto;
 }
 .find__your__flight {
-  width: 278px;
+  width: 289px;
   height: 56px;
   margin-top: 64px;
   margin-left: 132px;
@@ -91,13 +91,12 @@
 }
 
 .cantidad__personas {
-  width: 120px;
+  width: 80px;
   height: 36px;
   top: 144px;
   left: 409px;
   border-radius: 18px;
   border: none;
-
   font-family: Sarabun;
   font-size: 14px;
   font-weight: 400;
@@ -107,7 +106,6 @@
   color: #6c6cfe;
   display: flex;
   align-items: center;
-  gap: 10px;
   cursor: pointer;
 }
 .pasajero {
@@ -133,13 +131,12 @@
   gap: 7px;
 }
 .economy {
-  width: 120px;
+  width: 140px;
   height: 36px;
-  top: 144px;
+  top: 140px;
   left: 509px;
   border-radius: 18px;
   border: none;
-
   font-family: Sarabun;
   font-size: 14px;
   font-weight: 400;
@@ -149,12 +146,12 @@
   color: #6c6cfe;
   display: flex;
   align-items: center;
-  gap: 20px;
   cursor: pointer;
-}
+
+  }
 
 .clase {
-  left: 509px;
+  left: 100px;
   color: #6c6cfe;
   font-family: Sarabun;
   font-size: 14px;
